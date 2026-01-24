@@ -4,11 +4,10 @@ import { useEffect, useState } from "react";
 import { CartDrawer } from "./components/cart/CartDrawer";
 import { CartProvider } from "./context/CartContext";
 import { Home } from "./pages/Home"; 
-import { Header } from "./components/layout/Header";
-import { Footer } from "./components/layout/Footer";
 import { Container } from "./components/layout/Container";
 import { Checkout } from "./pages/Checkout";
 import { ProductDetails } from "./pages/ProductDetails";
+import { Layout } from "./components/layout/Layout";
 
 
 function AppContent() {
@@ -23,12 +22,12 @@ function AppContent() {
 
   return (
     <>
-        <Header openCart={()=>setisCartOpen(true)}
-          />
+      
        {isCartOpen &&(
       <CartDrawer isOpen={isCartOpen} onClose={()=>
        setisCartOpen(false)}/>
       )}
+      <Layout openCart={()=>setisCartOpen(true)}>
        <Container>
       <Routes>
     <Route path="/" element={<Home/>}/>
@@ -36,7 +35,7 @@ function AppContent() {
     <Route path="/checkout" element={<Checkout/>}/>
 </Routes>
 </Container>
-      <Footer/>
+      </Layout>
      </>
   );
 }

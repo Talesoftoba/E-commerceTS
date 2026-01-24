@@ -1,6 +1,7 @@
 import { CartItemRow } from "./CartItemRow";
 import { useCart } from "../../hooks/useCart";
 import { CartSummary } from "./CartSummary";
+import { X } from "lucide-react";
 
 type Props ={
     isOpen:boolean;
@@ -32,7 +33,10 @@ export const CartDrawer=({isOpen, onClose}:Props)=>{
                     e.stopPropagation();
                     onClose();
                 }}
-                 className="text-gray-600 hover:text-gray-800">X</button>
+                 className="text-gray-600 hover:text-gray-800"
+                 >
+                    <X size={24}/>
+                    </button>
 
                   </div>
                 <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
