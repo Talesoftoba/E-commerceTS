@@ -1,6 +1,6 @@
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { CartDrawer } from "./components/cart/CartDrawer";
 import { CartProvider } from "./context/CartContext";
 import { Home } from "./pages/Home"; 
@@ -11,34 +11,45 @@ import { Checkout } from "./pages/Checkout";
 import { ProductDetails } from "./pages/ProductDetails";
 
 
-function App() {
+function AppContent() {
   const [isCartOpen, setisCartOpen] = useState(false);
+  const location = useLocation();
  
+  useEffect(()=>{
+    if(location.pathname === "/checkout"){
+      setisCartOpen(false);
+    }
+  },[location.pathname]);
 
   return (
-    <CartProvider>
-      <Router>
-        <Header openCart={()=>setisCartOpen(prev=>!prev)}/>
-
+    <>
+        <Header openCart={()=>setisCartOpen(true)}
+          />
+       {isCartOpen &&(
       <CartDrawer isOpen={isCartOpen} onClose={()=>
        setisCartOpen(false)}/>
+      )}
        <Container>
       <Routes>
-       
     <Route path="/" element={<Home/>}/>
     <Route path="/product/:id" element={<ProductDetails/>}/>
     <Route path="/checkout" element={<Checkout/>}/>
-
-
 </Routes>
 </Container>
       <Footer/>
-     </Router>
-    </CartProvider>
-    
+     </>
   );
 }
 
-export default App
+
+export default function App(){
+  return(
+    <CartProvider>
+      <Router>
+        <AppContent/>
+      </Router>
+    </CartProvider>
+  )
+}
 
 
