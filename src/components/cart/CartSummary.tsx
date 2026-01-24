@@ -14,7 +14,7 @@ export const CartSummary =()=>{
             <div className="flex justify-between mb-2">
                 <span className="font-semibold text-gray-700">Total:</span>
 
-                <span className="font-bold text-gray-700">${totalPrice.toFixed(2)}</span>
+                <span className="font-bold text-gray-900">${totalPrice.toFixed(2)}</span>
             </div>
 
           <Link to="/checkout" className={isDisabled ? "pointer-events-none" : ""}>
