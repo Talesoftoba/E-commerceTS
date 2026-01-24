@@ -15,7 +15,7 @@ export const ProductDetails =()=>{
     return(
         <div className="max-w-4xl mx-auto p-6 flex flex-col md:flex-row gap-6">
             <div className="md:w-1/2 flex justify-center items-center">
-                <img src={product.title} alt={product.title}
+                <img src={product.image} alt={product.title}
                 className="w-full h-80 object-contain"/>
             </div>
 
