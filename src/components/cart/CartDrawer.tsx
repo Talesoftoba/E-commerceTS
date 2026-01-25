@@ -26,7 +26,7 @@ export const CartDrawer=({isOpen, onClose}:Props)=>{
 
             <div className="p-4 flex justify-between items-center border-b"> 
 
-                <h2 className="text-xl font-bold" >Your Cart</h2>
+                <h2 className="text-xl font-bold text-gray-900" >Your cart</h2>
 
                 <button 
                 onClick={(e)=>{

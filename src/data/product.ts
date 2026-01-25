@@ -5,6 +5,10 @@ import smartwatch from "../assets/images/smartwatch.jpg";
 import jacket from "../assets/images/jacket.jpg";
 import book from "../assets/images/book.jpg";
 import sneakers from "../assets/images/sneakers.jpg";
+import bag from "../assets/images/bag.jpg"
+import dress from "../assets/images/dress.jpg"
+
+
 
 export const productsData:Product[]=[
   {
@@ -48,7 +52,21 @@ export const productsData:Product[]=[
       category: "fashion",
       image: sneakers
   },
-
-
+  {
+    id: 6,
+    title: "Leather Bag",
+    description: "Classic comfortable and trendy",
+    price: 150,
+    category: "fashion",
+    image: bag
+  },
+  {
+    id: 7,
+    title: "Dress",
+    description: "best quality and trendy fashion",
+    price: 150,
+    category: "fashion",
+    image: dress
+  }
 
 ];
