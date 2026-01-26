@@ -36,7 +36,8 @@ export const Checkout =()=>{
 
             <section className="flex flex-col gap-4">
                 {cartItems.length===0 ? (
-                    <p>Your cart is empty.</p>
+                    <p className="text-center text-gray-500 text-sm px-3 py-2 bg-gray-100 rounded max-w-sm mx-auto">
+                    Your cart is empty.</p>
                 ) : (
                 cartItems.map((item)=>
                  <CartItemRow key={item.id} item={item}/>)
