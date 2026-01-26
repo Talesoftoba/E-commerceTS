@@ -8,6 +8,8 @@ import { Container } from "./components/layout/Container";
 import { Checkout } from "./pages/Checkout";
 import { ProductDetails } from "./pages/ProductDetails";
 import { Layout } from "./components/layout/Layout";
+import { Payment } from "./pages/Payment";
+import { Confirmation } from "./pages/Confirmation";
 
 
 function AppContent() {
@@ -41,6 +43,8 @@ function AppContent() {
     <Route path="/" element={<Home/>}/>
     <Route path="/product/:id" element={<ProductDetails/>}/>
     <Route path="/checkout" element={<Checkout/>}/>
+    <Route path="/payment" element={<Payment/>}/>
+    <Route path="/confirmation" element={<Confirmation/>}/>
 </Routes>
 </Container>
       </Layout>
