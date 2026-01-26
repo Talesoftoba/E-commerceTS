@@ -1,7 +1,17 @@
 import { useCart } from "../../hooks/useCart";
-import { Link } from "react-router-dom";
 
-export const CartSummary =()=>{
+type CartSummaryProps={
+    buttonLabel?:string;
+    onClicks?:()=>void;
+    hideButton?:boolean
+}
+
+
+export const CartSummary =({
+    buttonLabel="Proceed to checkout",
+    onClicks,
+    hideButton=false,
+}:CartSummaryProps)=>{
     const {cartItems} = useCart();
 
     const totalPrice = cartItems.reduce((sum,item)=>
@@ -17,15 +27,17 @@ export const CartSummary =()=>{
                 <span className="font-bold text-gray-900">${totalPrice.toFixed(2)}</span>
             </div>
 
-          <Link to="/checkout" className={isDisabled ? "pointer-events-none" : ""}>
+         {!hideButton&&(
             <button
+            onClick={onClicks}
             disabled={isDisabled}
-            className="w-full p-3 bg-purple-600 text-white font-bold
-            rounded hover:bg-purple-700 disabled:bg-gray-300"
+            className="w-full p-3 bg-purple-600 text-white font-bold rounded 
+            hover:bg-purple-700 disabled:bg-gray-300"
             >
-           Proceed to Checkout
+            {buttonLabel}
             </button>
-           </Link>
+         )
+         }
         </div>
 
     );

@@ -2,6 +2,7 @@ import { CartItemRow } from "./CartItemRow";
 import { useCart } from "../../hooks/useCart";
 import { CartSummary } from "./CartSummary";
 import { X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 type Props ={
     isOpen:boolean;
@@ -10,6 +11,7 @@ type Props ={
 
 export const CartDrawer=({isOpen, onClose}:Props)=>{
     const {cartItems} = useCart();
+    const navigate = useNavigate();
 
     return(
         <>
@@ -47,7 +49,10 @@ export const CartDrawer=({isOpen, onClose}:Props)=>{
                     <CartItemRow key={item.id} item={item}/>)
                     )}
                     <div className="mt-auto">
-                   <CartSummary/>
+                   <CartSummary
+                   buttonLabel="Proceed to Checkout"
+                   onClicks={()=>navigate("/checkout")}
+                   />
                 </div>
             </div>
         </div>

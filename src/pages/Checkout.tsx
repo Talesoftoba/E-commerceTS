@@ -1,5 +1,6 @@
 import { useCart } from "../hooks/useCart";
 import { CartItemRow } from "../components/cart/CartItemRow";
+import { CartSummary } from "../components/cart/CartSummary";
 
 
 export const Checkout =()=>{
@@ -19,7 +20,9 @@ export const Checkout =()=>{
                 }
 
             </div>
-            
+            <CartSummary
+            buttonLabel="proceed to payment"
+            />
         </div>
     );
 
