@@ -18,6 +18,15 @@ export const Checkout =()=>{
         phone:"",
     });
 
+    const shippingFields=[
+        {name:"fullName", label:"Full Name"},
+        {name:"address", label:"Address"},
+        {name:"city", label:"City"},
+        {name:"zip", label:"Zip/Postal Code"},
+        {name:"country", label:"Country"},
+         {name:"phone", label:"Phone"},
+    ];
+
 
          const isShippingValid = Object.values(shippingInfo).every(
             val => val.trim() !==""
@@ -46,13 +55,13 @@ export const Checkout =()=>{
 
             <section className="border p-3 rounded flex flex-col gap-2 max-w-xl w-full mx-auto">
                 <h2 className="font-semibold text-lg text-center">Shipping Information</h2>
-                {["fullName", "address", "city", "zip" ,"country", "phone"].map((field)=>(
+
+                {shippingFields.map((field)=>(
                     <input
-                    key={field}
-                    type="text"
-                    name={field}
-                    placeholder={field==="zip"?"ZIP/Postal Code" : field.charAt(0).toUpperCase()+ field.slice(1)}
-                    value={shippingInfo[field as keyof typeof shippingInfo]}
+                    key={field.name}
+                    name={field.name}
+                    placeholder={field.label}
+                    value={shippingInfo[field.name as keyof typeof shippingInfo]}
                     onChange={handleChange}
                     className="p-1.5 border rounded text-sm w-full focus:ring-1 focus:ring-purple-500"
                     />
