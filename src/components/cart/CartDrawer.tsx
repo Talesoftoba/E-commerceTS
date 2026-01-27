@@ -28,7 +28,9 @@ export const CartDrawer=({isOpen, onClose}:Props)=>{
 
             <div className="p-4 flex justify-between items-center border-b"> 
 
-                <h2 className="text-xl font-bold text-gray-900" >Your cart</h2>
+                <h2 className="text-md font-bold text-white bg-black rounded p-2
+                text-center "
+                 >Your cart</h2>
 
                 <button 
                 onClick={(e)=>{
@@ -44,7 +46,9 @@ export const CartDrawer=({isOpen, onClose}:Props)=>{
                 <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
 
                     {cartItems.length===0 ?(
-                        <p className="text-gray-500">Your cart is empty.</p>
+                        <p className="text-sm text-white mt-2 px-3 py-1 bg-black
+                border boder-red-200 rounded text-center max-w-md mx-auto">
+                            Your cart is empty.</p>
                     ):(cartItems.map((item)=>
                     <CartItemRow key={item.id} item={item}/>)
                     )}

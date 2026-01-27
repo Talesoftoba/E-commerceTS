@@ -1,12 +1,13 @@
 import type { Product } from "../types/product";
 
-import headphones from "../assets/images/headphones.jpg";
-import smartwatch from "../assets/images/smartwatch.jpg";
-import jacket from "../assets/images/jacket.jpg";
-import book from "../assets/images/book.jpg";
-import sneakers from "../assets/images/sneakers.jpg";
-import bag from "../assets/images/bag.jpg"
-import dress from "../assets/images/dress.jpg"
+import headphones1 from "../assets/images/headphones1.png";
+import smartwatch1 from "../assets/images/smartwatch1.png";
+import jacket1 from "../assets/images/jacket1.png";
+import book1 from "../assets/images/book1.png";
+import sneakers1 from "../assets/images/sneakers1.png";
+import bag2 from "../assets/images/bag2.png"
+import dress1 from "../assets/images/dress1.png"
+import shirt1 from "../assets/images/shirt1.png"
 
 
 
@@ -17,7 +18,7 @@ export const productsData:Product[]=[
       description: "High-quality wireless headphones with noise cancellation",
       price: 120,
       category: "electronics",
-      image: headphones
+      image: headphones1
   },
     {
       id: 2,
@@ -25,7 +26,7 @@ export const productsData:Product[]=[
       description: "Stylish smartwatch with fitnss tracking and notifications",
       price: 200,
       category: "electronics",
-      image: smartwatch
+      image: smartwatch1
       
   },
     {
@@ -34,7 +35,7 @@ export const productsData:Product[]=[
       description: "Premium leather jacket for a stylish look",
       price: 350,
       category: "fashion",
-      image: jacket
+      image: jacket1
   },
     {
       id: 4,
@@ -42,7 +43,7 @@ export const productsData:Product[]=[
       description: "Bestselling novel to enjoy in your free time",
       price: 25,
       category: "books",
-      image: book
+      image: book1
   },
     {
       id: 5,
@@ -50,7 +51,7 @@ export const productsData:Product[]=[
       description: "Comfortable sneakers for everyday wear",
       price: 120,
       category: "fashion",
-      image: sneakers
+      image: sneakers1
   },
   {
     id: 6,
@@ -58,7 +59,7 @@ export const productsData:Product[]=[
     description: "Classic comfortable and trendy",
     price: 150,
     category: "fashion",
-    image: bag
+    image: bag2
   },
   {
     id: 7,
@@ -66,7 +67,15 @@ export const productsData:Product[]=[
     description: "best quality and trendy fashion",
     price: 150,
     category: "fashion",
-    image: dress
+    image: dress1
+  },
+  {
+    id: 8,
+    title: "T-shirt",
+    description: "Best quality shirts",
+    price: 200,
+    category: "fashion",
+    image: shirt1
   }
 
 ];
