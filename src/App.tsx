@@ -18,6 +18,7 @@ function AppContent() {
  
   useEffect(()=>{
     if(location.pathname === "/checkout"){
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setisCartOpen(false);
     }
   },[location.pathname]);

@@ -16,6 +16,7 @@ export const CartItemRow=({item}:Props)=>{
             <div className="flex-1 flex flex-col">
                 <h4 className="font-medium">{item.title}</h4>
                 <p className="text-sm text-gray-500">${item.price}</p>
+              
 
                 <div className="mt-2">
                     <QuantityControl
