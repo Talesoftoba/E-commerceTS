@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
+
 type CartItem = {
   title: string;
   price: number;
@@ -21,7 +22,7 @@ export async function OPTIONS() {
   });
 }
 
-// Actual POST
+// Handle checkout
 export async function POST(req: Request) {
   const headers = {
     "Access-Control-Allow-Origin": "*",
@@ -33,7 +34,6 @@ export async function POST(req: Request) {
     const { items }: { items: CartItem[] } = await req.json();
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
       mode: "payment",
       line_items: items.map((item) => ({
         price_data: {
@@ -48,8 +48,11 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ url: session.url }, { headers });
-  } catch (err) {
-    console.error(err);
-    return NextResponse.json({ error: "Stripe checkout failed" }, { status: 500, headers });
+  } catch (error) {
+    console.error("Stripe checkout error:", error);
+    return NextResponse.json(
+      { error: "Stripe checkout failed" },
+      { status: 500, headers }
+    );
   }
 }
