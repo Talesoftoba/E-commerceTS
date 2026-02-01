@@ -21,7 +21,7 @@ export const Payment = () => {
       setIsPaying(true);
 
       // Use local backend URL
-      const BACKEND_URL = "http://localhost:3000";
+      const BACKEND_URL = "https://e-commerce-ts-bice.vercel.app";
 
       const res = await fetch(`${BACKEND_URL}/api/checkout`, {
         method: "POST",

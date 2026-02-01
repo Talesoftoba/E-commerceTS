@@ -43,8 +43,8 @@ export async function POST(req: Request) {
         },
         quantity: item.quantity,
       })),
-      success_url: "http://localhost:5173/success",
-      cancel_url: "http://localhost:5173/cancel",
+      success_url: process.env.SUCCESS_URL!,
+      cancel_url: process.env.CANCEL_URL!,
     });
 
     return NextResponse.json({ url: session.url }, { headers });
